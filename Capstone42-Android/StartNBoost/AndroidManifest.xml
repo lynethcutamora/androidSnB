@@ -14,13 +14,37 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.android.startnboost.MainActivity"
+            android:name="com.android.startnboost.LoginActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        
+        <!-- Sign-in Activity -->
+        <activity
+            android:name=".MainActivity"
+            android:label="Log in" >
+        </activity>
+        
+        <!-- Sign-up Activity -->
+        <activity
+            android:name=".SignupActivity"
+            android:label="Sign Up" >
+        </activity>
+        <activity
+            android:name=".IdeatorActivity"
+            android:label="Sign Up Ideator" >
+        </activity>
+        <activity
+            android:name=".InvestorActivity"
+            android:label="Sign Up Investor" >
+        </activity>
+        <activity
+            android:name=".CompanyActivity"
+            android:label="Sign Up Company" >
         </activity>
     </application>
 

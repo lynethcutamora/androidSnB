@@ -9,6 +9,8 @@
     <item>Profile</item>
     <item>Onfire</item>
     <item>Timeline</item>
+    <item>New Ideas</item>
+    <item>Startup Products</item>
 </string-array>
 
     <string name="drawer_open">Open navigation drawer</string>

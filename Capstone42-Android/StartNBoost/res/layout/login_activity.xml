@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg" >
+    
+    <LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:orientation="vertical"
+	    android:gravity="center">
+	 
+	    <!--  Sample Dashboard screen with Two buttons -->
+	    <!--  Button to view all products screen -->
+
+		<ImageView
+		    android:id="@+id/imageView1"
+		    android:layout_width="162dp"
+		    android:layout_height="126dp"
+		    android:layout_weight="1"
+		    android:src="@drawable/logo2" />
+
+"
+
+		<EditText
+		    android:id="@+id/editText1"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="0.2"
+		    android:background="@drawable/backcolor"
+		    android:textColor="#00ffff"
+		    android:ems="10"
+		    android:hint="Email"
+		    android:inputType="textEmailAddress"
+		    android:singleLine="true" >
+
+		    <requestFocus />
+		</EditText>
+
+		<TextView
+		    android:id="@+id/textView1"
+		    android:layout_width="wrap_content"
+		    android:layout_height="11dp"
+		    android:text="------------------------------------------------"
+		    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+		<EditText
+		    android:id="@+id/editText2"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="0.2"
+		    android:textColor="#00ffff"
+		    android:background="@drawable/backcolor"
+		    android:ems="10"
+		    android:hint="Password"
+		    android:inputType="textPassword" />
+
+	    <Button android:id="@+id/btnLogin"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:text="Log-in"
+	        android:textColor="#00ffff"
+	        android:background="@android:color/transparent"
+	        android:layout_marginTop="25dip"/>
+	 
+	    <!--  Button to create a new product screen -->
+	    <Button android:id="@+id/btnSignup"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:text="Sign-up"
+	        android:textColor="#00ffff"
+	        android:background="@android:color/transparent"
+	        android:layout_marginTop="25dip"/>
+	 
+	</LinearLayout>
+
+</RelativeLayout>

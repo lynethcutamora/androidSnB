@@ -139,12 +139,17 @@ public class MainActivity extends Activity {
 	        fragment = new ProfileFragment();
 	        break;
 	    case 1:
-	        fragment = new ReadFragment();
+	        fragment = new OnfireFragment();
 	        break;
 	    case 2:
-	        fragment = new HelpFragment();
+	        fragment = new TimelineFragment();
 	        break;
-	 
+	    case 3:
+	    	fragment = new NewideasFragment();
+	    	break;
+	    case 4:
+	    	fragment = new StartupFragment();
+	    	break;
 	    default:
 	        break;
 	    }

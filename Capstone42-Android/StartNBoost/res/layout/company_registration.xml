@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#6dddbc" >
+    
+	<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+        
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Company Registration Form"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_weight="0.2"
+        android:background="@drawable/backcolor"
+		android:textColor="#00ffff"
+		android:hint="Company Name"
+		android:singleLine="true"
+        android:inputType="textPersonName" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_weight="0.2"
+        android:background="@drawable/backcolor"
+		android:textColor="#00ffff"
+		android:hint="Business Type"
+		android:singleLine="true"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:background="@drawable/backcolor"
+		android:textColor="#00ffff"
+		android:hint="Address"
+		android:singleLine="true"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_weight="0.2"
+        android:background="@drawable/backcolor"
+		android:textColor="#00ffff"
+		android:hint="Owner Name"
+		android:singleLine="true"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:background="@drawable/backcolor"
+		android:textColor="#00ffff"
+		android:hint="Year Founded"
+		android:singleLine="true"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_weight="0.2"
+        android:background="@drawable/backcolor"
+		android:textColor="#00ffff"
+		android:hint="Email"
+		android:singleLine="true"
+        android:inputType="textPostalAddress" />
+
+    <EditText
+        android:id="@+id/editText7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_weight="0.2"
+        android:background="@drawable/backcolor"
+		android:textColor="#00ffff"
+		android:hint="Password"
+		android:singleLine="true"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/editText8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_weight="0.2"
+        android:background="@drawable/backcolor"
+		android:textColor="#00ffff"
+		android:hint="Re-Type Password"
+		android:singleLine="true"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btn_submit_company"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:layout_weight="0.2"
+        android:text="Submit" />
+
+    </LinearLayout>
+    
+</RelativeLayout>
