@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg" >
+    android:background="#cccccc" >
     
     <LinearLayout
 	    android:layout_width="fill_parent"
@@ -15,20 +15,19 @@
 
 		<ImageView
 		    android:id="@+id/imageView1"
-		    android:layout_width="162dp"
+		    android:layout_width="182dp"
 		    android:layout_height="126dp"
-		    android:layout_weight="1"
+		    android:layout_weight="0.72"
 		    android:src="@drawable/logo2" />
 
 "
 
 		<EditText
-		    android:id="@+id/editText1"
+		    android:id="@+id/editText_fname"
 		    android:layout_width="match_parent"
 		    android:layout_height="wrap_content"
 		    android:layout_weight="0.2"
 		    android:background="@drawable/backcolor"
-		    android:textColor="#00ffff"
 		    android:ems="10"
 		    android:hint="Email"
 		    android:inputType="textEmailAddress"
@@ -38,18 +37,17 @@
 		</EditText>
 
 		<TextView
-		    android:id="@+id/textView1"
+		    android:id="@+id/selfDescription"
 		    android:layout_width="wrap_content"
 		    android:layout_height="11dp"
 		    android:text="------------------------------------------------"
 		    android:textAppearance="?android:attr/textAppearanceLarge" />
 
 		<EditText
-		    android:id="@+id/editText2"
+		    android:id="@+id/editText_lastname"
 		    android:layout_width="match_parent"
 		    android:layout_height="wrap_content"
 		    android:layout_weight="0.2"
-		    android:textColor="#00ffff"
 		    android:background="@drawable/backcolor"
 		    android:ems="10"
 		    android:hint="Password"
@@ -59,8 +57,6 @@
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
 	        android:text="Log-in"
-	        android:textColor="#00ffff"
-	        android:background="@android:color/transparent"
 	        android:layout_marginTop="25dip"/>
 	 
 	    <!--  Button to create a new product screen -->
@@ -68,8 +64,6 @@
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
 	        android:text="Sign-up"
-	        android:textColor="#00ffff"
-	        android:background="@android:color/transparent"
 	        android:layout_marginTop="25dip"/>
 	 
 	</LinearLayout>

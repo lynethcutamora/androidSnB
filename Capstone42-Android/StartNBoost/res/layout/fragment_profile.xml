@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#cccccc">
 
     <ImageView
         android:id="@+id/header_imageview"
@@ -21,20 +22,42 @@
         android:paddingTop="32dp"
         android:paddingBottom="32dp">
 
-
         <TextView
+            android:id="@+id/user_lName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="StartNBoost"
-            android:textStyle="bold"
-            android:textSize="17dp" />
+            android:text="Lastname"
+            android:textSize="17dp"
+            android:textStyle="bold" />
 
-        <TextView
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center" >
+            
+            <TextView
+            android:id="@+id/user_fName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:gravity="center"
-            android:textColor="#FF707070"/>
+            android:text="Firstname"
+            android:textSize="17dp"
+            android:textStyle="bold" />
+            
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=","
+            android:textSize="17dp"
+            android:textStyle="bold" />
+            
+            <TextView
+            android:id="@+id/user_midInit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="M.I"
+            android:textSize="17dp"
+            android:textStyle="bold" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -54,10 +77,77 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <!-- Here are the tabs, Just TextViews with a selector and a clickListener... -->
             <!-- There is also two views at each edge with a gradient drawable making the fade effect. But I find this pretty ugly. -->
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="About:"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/selfDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Self Description" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" " />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Place: " />
+
+                <TextView
+                    android:id="@+id/userAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:text=" "
+                    android:textColor="#FF707070" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/userGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gender" />
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Joined: " />
+
+                <TextView
+                    android:id="@+id/userDatejoined"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:text=" "
+                    android:textColor="#FF707070" />
+
+            </LinearLayout>
 
         </LinearLayout>
     </HorizontalScrollView>
