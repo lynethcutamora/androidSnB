@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
@@ -18,7 +19,6 @@ public class MainActivity extends Activity {
 	private String[] mNavigationDrawerItemTitles;
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
-	
 	private ActionBarDrawerToggle mDrawerToggle;
 
     // nav drawer title
@@ -26,11 +26,17 @@ public class MainActivity extends Activity {
  
     // used to store app title
     private CharSequence mTitle;
-
+    
+    private String id;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		Bundle extras = getIntent().getExtras();
+		if (extras != null) {
+		    id = extras.getString("userId");
+		}
 		
 		// for proper titles
 				mTitle = mDrawerTitle = getTitle();
@@ -42,7 +48,7 @@ public class MainActivity extends Activity {
 		        
 		        // list the drawer items
 		        ObjectDrawerItem[] drawerItem = new ObjectDrawerItem[5];
-		        
+		   
 		        drawerItem[0] = new ObjectDrawerItem(R.drawable.ic_action_profile, "Profile");
 		        drawerItem[1] = new ObjectDrawerItem(R.drawable.ic_action_onfire, "Onfire");
 		        drawerItem[2] = new ObjectDrawerItem(R.drawable.ic_action_timeline, "Timeline");
@@ -131,12 +137,11 @@ public class MainActivity extends Activity {
 	}
 	 
 	private void selectItem(int position) {
-	    
 	    Fragment fragment = null;
 	    
 	    switch (position) {
 	    case 0:
-	        fragment = new ProfileFragment();
+	        fragment = new ProfileFragment(id);
 	        break;
 	    case 1:
 	        fragment = new OnfireFragment();
@@ -163,7 +168,7 @@ public class MainActivity extends Activity {
 	        setTitle(mNavigationDrawerItemTitles[position]);
 	        mDrawerLayout.closeDrawer(mDrawerList);
 	        
-	    } else {
+	    }else {
 	        Log.e("MainActivity", "Error in creating fragment");
 	    }
 	}
@@ -173,5 +178,4 @@ public class MainActivity extends Activity {
         mTitle = title;
         getActionBar().setTitle(mTitle);
     }
-
 }

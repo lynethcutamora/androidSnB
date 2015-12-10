@@ -34,6 +34,7 @@ public class LoginActivity extends Activity{
 	Button btn_SignUp,btn_Login;
 	EditText txt_email,txt_pass;
 	
+	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login_activity);
@@ -58,7 +59,7 @@ public class LoginActivity extends Activity{
                 	txt_pass.setError("Empty Line!!");
                 }else{
                 	ReadData task1 = new ReadData();
-					task1.execute(new String[]{"http://192.168.43.3/androidSnB/connectSNBDB/viewById.php?emailAdd=" +txt_email.getText().toString()});
+					task1.execute(new String[]{"http://192.168.1.107/androidSnB/connectSNBDB/viewById.php?emailAdd=" +txt_email.getText().toString()});
                 }
             }
         });
@@ -167,16 +168,20 @@ public class LoginActivity extends Activity{
 				String pass = txt_pass.getText().toString();
 				String pas = md5(pass);
 				String email = i1.getemailadd();
+				String userId = i1.getuserid();
 				if(txt_email.getText().toString().equals(email)){
 					if(pas.equals(password)){
-						Intent i = new Intent(getApplicationContext(), MainActivity.class);
-						Intent intent = new Intent("com.hmkcode.android.IdeatorActivity");
-				        intent.putExtra("userId", i1.getuserid());
-				        intent.putExtra("dateRegistered", i1.getdateregistered());
-				        startActivity(intent);
-						startActivity(i);
+						//Intent i = new Intent(getApplicationContext(), MainActivity.class);
+						//Bundle id = new Bundle();
+						//id.putString("userId", userId);
+						//ProfileFragment fragobj = new ProfileFragment();
+						//fragobj.setArguments(id);
+						Intent intent = new Intent(getBaseContext(), MainActivity.class);
+						intent.putExtra("userId", userId);
+						startActivity(intent);
+						//startActivity(i);
 						
-						Toast.makeText(getApplicationContext(), "Welcome Sensie!!! =)",
+					Toast.makeText(getApplicationContext(), "Welcome Sensie!!! =)",
 	             		   Toast.LENGTH_LONG).show();
 
 					}else{
@@ -187,6 +192,7 @@ public class LoginActivity extends Activity{
 					Toast.makeText(getApplicationContext(), "Email address is incorrect!!! =)",
 		             		   Toast.LENGTH_LONG).show();
 				}
+				
 			}
 			else{
 				Toast.makeText(LoginActivity.this, "Error", Toast.LENGTH_LONG).show();

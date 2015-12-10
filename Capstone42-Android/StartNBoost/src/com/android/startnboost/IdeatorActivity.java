@@ -69,7 +69,7 @@ public class IdeatorActivity extends Activity{
                 	Toast.makeText(getApplicationContext(), "Password did not match!!! =)", Toast.LENGTH_LONG).show();
                 }else{
                 	Insertideator task1 = new Insertideator();
-					task1.execute(new String[]{"http://192.168.43.3/androidSnB/connectSNBDB/insertideator.php"});
+					task1.execute(new String[]{"http://192.168.1.107/androidSnB/connectSNBDB/insertideator.php"});
                 }
             }
         });
