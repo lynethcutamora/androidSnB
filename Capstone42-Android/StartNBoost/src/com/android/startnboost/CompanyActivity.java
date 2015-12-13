@@ -62,7 +62,7 @@ public class CompanyActivity extends Activity{
                 	Toast.makeText(getApplicationContext(), "Password did not match!!! =)", Toast.LENGTH_LONG).show();
                 }else{
                 	Insertcompany task1 = new Insertcompany();
-					task1.execute(new String[]{"http://192.168.1.107/connectSNBDB/insertuser.php"});
+					task1.execute(new String[]{"http://192.168.1.107/androidSnB/connectSNBDB/insertuser.php"});
                 }
             }
         });

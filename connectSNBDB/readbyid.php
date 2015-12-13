@@ -1,7 +1,8 @@
 <?PHP
 include_once("conn.php");
-if(isset($_POST['userId'])){
-	$userId = $_POST['userId'];
+$query;
+if(isset($_GET['userId'])){
+	$userId = $_GET['userId'];
 
 	$query = "SELECT * FROM user_dtl WHERE userId = '$userId'";
 

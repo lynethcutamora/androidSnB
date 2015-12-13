@@ -27,7 +27,14 @@
             android:name=".MainActivity"
             android:label="Start and Boost" >
         </activity>
-        
+        <activity
+            android:name=".NavBarActivity"
+            android:label="Start and Boost" >
+        </activity>
+        <activity
+            android:name=".ProfileActivity"
+            android:label="Start and Boost" >
+        </activity>
         <!-- Sign-up Activity -->
         <activity
             android:name=".SignupActivity"
