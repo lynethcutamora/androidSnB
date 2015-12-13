@@ -2,7 +2,6 @@ package com.android.startnboost;
 
 import java.io.IOException;
 import java.util.ArrayList;
-
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
@@ -11,7 +10,6 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -21,29 +19,46 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
+import android.widget.RadioGroup.OnCheckedChangeListener;
 
 public class IdeatorActivity extends Activity{
-	Button btnSubmitIdeator;
-	EditText fname,lname,mi,age,gender,address,email,password,retypepassword;
+	private Button btnSubmitIdeator;
+	private EditText lname,fname,mi,age,email,password,retypepassword;
+	private RadioGroup radiogroup;
+	private RadioButton ideator_female,ideator_male;
+	private String ideator_gender;
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.ideator_registration);
 		
 		btnSubmitIdeator = (Button) findViewById(R.id.btn_submit_ideator);
+		radiogroup = (RadioGroup) findViewById(R.id.RadioGroup_ideatorgender);
+		radiogroup.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                // find which radio button is selected
+                if(checkedId == R.id.rbtn_ideator_female) {
+                    ideator_gender = "F";
+                } else if(checkedId == R.id.rbtn_ideator_male) {
+                    ideator_gender = "M";
+                }
+            }
+        });
 		
-		fname = (EditText) findViewById(R.id.editText_fname);
-		lname = (EditText) findViewById(R.id.editText_lastname);
-		mi = (EditText) findViewById(R.id.editText_mi);
-		age = (EditText) findViewById(R.id.editText_age);
-		gender = (EditText) findViewById(R.id.editText_gender);
-		address = (EditText) findViewById(R.id.editText_address);
-		email = (EditText) findViewById(R.id.editText_email);
-		password = (EditText) findViewById(R.id.editText_password);
-		retypepassword = (EditText) findViewById(R.id.editText_re_password);
+		ideator_female = (RadioButton) findViewById(R.id.rbtn_ideator_female);
+		ideator_male = (RadioButton) findViewById(R.id.rbtn_ideator_male);
 		
-		
+		lname = (EditText) findViewById(R.id.edittext_ideator_lname);
+		fname = (EditText) findViewById(R.id.edittext_ideator_fname);
+		mi = (EditText) findViewById(R.id.edittext_ideator_mi);
+		age = (EditText) findViewById(R.id.edittext_ideator_age);
+		email = (EditText) findViewById(R.id.edittext_ideator_email);
+		password = (EditText) findViewById(R.id.edittext_ideator_password);
+		retypepassword = (EditText) findViewById(R.id.edittext_ideator_retypepassword);
+	
 		submitideator();
 	}
 	
@@ -57,8 +72,6 @@ public class IdeatorActivity extends Activity{
                 	lname.setError("Empty Line!!");
                 }else if(age.length() == 0){
                 	age.setError("Empty Line!!");
-                }else if(gender.length() == 0){
-                	gender.setError("Empty Line!!");
                 }else if(email.length() == 0){
                 	email.setError("Empty Line!!");
                 }else if(password.length() == 0){
@@ -69,7 +82,7 @@ public class IdeatorActivity extends Activity{
                 	Toast.makeText(getApplicationContext(), "Password did not match!!! =)", Toast.LENGTH_LONG).show();
                 }else{
                 	Insertideator task1 = new Insertideator();
-					task1.execute(new String[]{"http://192.168.1.107/androidSnB/connectSNBDB/insertideator.php"});
+					task1.execute(new String[]{"http://192.168.1.107/androidSnB/connectSNBDB/insertuser.php"});
                 }
             }
         });
@@ -91,7 +104,7 @@ public class IdeatorActivity extends Activity{
 					pairs.add(new BasicNameValuePair("lname", lname.getText().toString()));
 					pairs.add(new BasicNameValuePair("mi", mi.getText().toString()));
 					pairs.add(new BasicNameValuePair("age", age.getText().toString()));
-					pairs.add(new BasicNameValuePair("gender", gender.getText().toString()));
+					pairs.add(new BasicNameValuePair("gender", ideator_gender));
 					pairs.add(new BasicNameValuePair("email", email.getText().toString()));
 					pairs.add(new BasicNameValuePair("password", password.getText().toString()));
 					HttpClient client = new DefaultHttpClient();

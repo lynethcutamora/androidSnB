@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#cccccc" >
+    
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Edit Form"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <EditText 
+                android:id="@+id/edittext_investor_addressline1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/backcolor"
+                android:ems="10"
+                android:hint="St.Address,Brgy,Dist/Company name"
+                android:inputType="textPostalAddress"
+                android:singleLine="true" >
+                <requestFocus />
+            </EditText>
+			
+            <EditText 
+                android:id="@+id/edittext_investor_addressline2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/backcolor"
+                android:ems="10"
+                android:hint="House No.,Unit,Bldg,Floor,Etc"
+                android:inputType="textPostalAddress"
+                android:singleLine="true"/>
+            
+            <EditText
+                android:id="@+id/edittext_investor_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/backcolor"
+                android:ems="10"
+                android:hint="City"
+                android:inputType="textPostalAddress"
+                android:singleLine="true"
+                android:textColor="#00ffff" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+                
+                <EditText
+                    android:id="@+id/edittext_investor_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/backcolor"
+                    android:ems="10"
+                    android:hint="State/Region"
+                    android:inputType="text"
+                    android:singleLine="true" />
+                
+                <EditText 
+                    android:id="@+id/edittext_investor_zipcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/backcolor"
+                    android:ems="10"
+                    android:hint="Zip Code"
+                    android:inputType="number"
+                    android:singleLine="true"/>
+                
+
+            </LinearLayout>
+            
+            <EditText
+                android:id="@+id/edittext_investor_country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/backcolor"
+                android:ems="10"
+                android:hint="Country"
+                android:inputType="text"
+                android:singleLine="true"/>
+            
+            <EditText 
+                android:id="@+id/edittext_investor_nameofbusiness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/backcolor"
+                android:ems="10"
+                android:hint="Name of Your Business"
+                android:inputType="text"
+                android:singleLine="true"/>
+            
+            <EditText 
+                android:id="@+id/edittext_investor_typeofbusiness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/backcolor"
+                android:ems="10"
+                android:hint="Type Of Your Business"
+                android:inputType="text"
+                android:singleLine="true"/>
+            
+            <EditText 
+                android:id="@+id/edittext_investor_selfdescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/backcolor"
+                android:ems="10"
+                android:hint="Short Self-Description"
+                android:inputType="text"
+                android:singleLine="true"/>
+            
+            <Button 
+                android:id="@+id/btn_edit_investor"
+                android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+	        	android:layout_weight="1"
+	        	android:text="Submit"/>
+            
+            
+        </LinearLayout>
+    
+
+</RelativeLayout>

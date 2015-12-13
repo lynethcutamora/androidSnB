@@ -171,12 +171,7 @@ public class LoginActivity extends Activity{
 				String userId = i1.getuserid();
 				if(txt_email.getText().toString().equals(email)){
 					if(pas.equals(password)){
-						//Intent i = new Intent(getApplicationContext(), MainActivity.class);
-						//Bundle id = new Bundle();
-						//id.putString("userId", userId);
-						//ProfileFragment fragobj = new ProfileFragment();
-						//fragobj.setArguments(id);
-						Intent intent = new Intent(getBaseContext(), MainActivity.class);
+						Intent intent = new Intent(getApplicationContext(), MainActivity.class);
 						intent.putExtra("userId", userId);
 						startActivity(intent);
 						//startActivity(i);

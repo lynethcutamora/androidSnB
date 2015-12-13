@@ -12,108 +12,126 @@
         android:orientation="vertical" >
 
         <TextView
-        android:id="@+id/selfDescription"
+        android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:gravity="center"
         android:text="Ideator Registration Form"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <EditText
-        android:id="@+id/editText_fname"
+        <EditText
+            android:id="@+id/edittext_ideator_lname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/backcolor"
+            android:ems="10"
+            android:hint="Lastname"
+            android:inputType="textPersonName"
+            android:singleLine="true" />
+
+    <EditText 
+        android:id="@+id/edittext_ideator_fname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:layout_weight="0.2"
+        android:layout_weight="1"
         android:background="@drawable/backcolor"
 		android:hint="Firstname"
 		android:singleLine="true"
         android:inputType="textPersonName" >
-
         <requestFocus />
     </EditText>
 
-    <EditText
-        android:id="@+id/editText_lastname"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+
+        <EditText
+            android:id="@+id/edittext_ideator_mi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/backcolor"
+            android:ems="10"
+            android:hint="Middle Initial"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/edittext_ideator_age"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/backcolor"
+            android:ems="10"
+            android:hint="Age"
+            android:inputType="number"
+            android:singleLine="true" />
+
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/RadioGroup_ideatorgender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+
+        <RadioButton
+            android:id="@+id/rbtn_ideator_female"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Female" />
+
+        <RadioButton
+            android:id="@+id/rbtn_ideator_male"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Male" />
+    </RadioGroup>
+
+    <EditText 
+        android:id="@+id/edittext_ideator_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:layout_weight="0.2"
-        android:background="@drawable/backcolor"
-		android:hint="Lastname"
-		android:singleLine="true"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/editText_mi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.2"
-        android:background="@drawable/backcolor"
-		android:hint="Middle Initial"
-		android:singleLine="true"
-        android:ems="10" />
-
-    <EditText
-        android:id="@+id/editText_age"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:layout_weight="0.2"
-        android:background="@drawable/backcolor"
-		android:hint="Age"
-		android:singleLine="true"
-        android:inputType="number" />
-
-    <EditText
-        android:id="@+id/editText_gender"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.2"
-        android:background="@drawable/backcolor"
-		android:hint="Gender"
-		android:singleLine="true"
-        android:ems="10" />
-
-    <EditText
-        android:id="@+id/editText_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:layout_weight="0.2"
+        android:layout_weight="1"
         android:background="@drawable/backcolor"
 		android:hint="Email"
 		android:singleLine="true"
-        android:inputType="textEmailAddress" />
-
-    <EditText
-        android:id="@+id/editText_password"
+		android:inputType="textEmailAddress"/>
+    
+    <EditText 
+        android:id="@+id/edittext_ideator_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:layout_weight="0.2"
+        android:layout_weight="1"
         android:background="@drawable/backcolor"
 		android:hint="Password"
 		android:singleLine="true"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"/>
 
-    <EditText
-        android:id="@+id/editText_re_password"
+    <EditText 
+        android:id="@+id/edittext_ideator_retypepassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.2"
+        android:layout_weight="1"
         android:background="@drawable/backcolor"
         android:ems="10"
         android:hint="Re-Type Password"
         android:inputType="textPassword"
-        android:singleLine="true" />
+        android:singleLine="true"/>
 
-    <Button
+    <Button 
         android:id="@+id/btn_submit_ideator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.2"
-        android:text="Submit" />
+        android:layout_weight="1"
+        android:text="Submit"/>
 
     </LinearLayout>
     

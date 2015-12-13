@@ -3,174 +3,144 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#cccccc" >
-    
+
 	<LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:orientation="vertical" >
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content" >
 
-        <TextView
-            android:id="@+id/selfDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Investor Registration Form"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-        
-        <EditText
-        android:id="@+id/editText_fname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:layout_weight="0.2"
-        android:background="@drawable/backcolor"
-		android:textColor="#00ffff"
-		android:hint="Firstname"
-		android:singleLine="true"
-        android:inputType="textPersonName" >
+	</LinearLayout>
 
-        <requestFocus />
-        </EditText>
-        
-        <EditText
-        android:id="@+id/editText_lastname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:layout_weight="0.2"
-        android:background="@drawable/backcolor"
-		android:textColor="#00ffff"
-		android:hint="Lastname"
-		android:singleLine="true"
-        android:inputType="textPersonName" />
+	<ImageView
+	    android:id="@+id/imageView1"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:src="@drawable/logo2" />
 
-    <EditText
-        android:id="@+id/editText_mi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.2"
-        android:background="@drawable/backcolor"
-		android:textColor="#00ffff"
-		android:hint="Middle Initial"
-		android:singleLine="true"
-        android:ems="10" />
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="460dp"
+	    android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/editText_age"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:layout_weight="0.2"
-        android:background="@drawable/backcolor"
-		android:textColor="#00ffff"
-		android:hint="Age"
-		android:singleLine="true"
-        android:inputType="number" />
+	    <TextView
+	        android:id="@+id/text"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:gravity="center"
+	        android:text="Investor Registration Form"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <EditText
-        android:id="@+id/editText_gender"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.2"
-        android:background="@drawable/backcolor"
-		android:textColor="#00ffff"
-		android:hint="Gender"
-		android:singleLine="true"
-        android:ems="10" />
+	    <EditText 
+	        android:id="@+id/edittext_investor_lname"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:background="@drawable/backcolor"
+	        android:ems="10"
+	        android:hint="Lastname"
+	        android:inputType="textPersonName"
+	        android:singleLine="true" >
+	        	<requestFocus />
+	        </EditText>
 
-    <EditText
-        android:id="@+id/editText_address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:layout_weight="0.2"
-        android:background="@drawable/backcolor"
-		android:textColor="#00ffff"
-		android:hint="Address"
-		android:singleLine="true"
-        android:inputType="textPostalAddress" />
+	    <EditText
+	        android:id="@+id/edittext_investor_fname"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:background="@drawable/backcolor"
+	        android:ems="10"
+	        android:hint="Firstname"
+	        android:inputType="textPersonName"
+	        android:singleLine="true" />
 
-    <EditText
-        android:id="@+id/editText_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:layout_weight="0.2"
-        android:background="@drawable/backcolor"
-		android:textColor="#00ffff"
-		android:hint="Email"
-		android:singleLine="true"
-        android:inputType="textEmailAddress" />
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1" >
 
-    <EditText
-        android:id="@+id/editText_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:layout_weight="0.2"
-        android:background="@drawable/backcolor"
-		android:textColor="#00ffff"
-		android:hint="Password"
-		android:singleLine="true"
-        android:inputType="textPassword" />
+	        <EditText
+	            android:id="@+id/editText_investor_mi"
+	            android:layout_width="wrap_content"
+	            android:layout_height="match_parent"
+	            android:layout_weight="1"
+	            android:background="@drawable/backcolor"
+	            android:ems="10"
+	            android:hint="Middle Initial"
+	            android:singleLine="true" />
 
-    <EditText
-        android:id="@+id/editText_re_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.2"
-        android:background="@drawable/backcolor"
-        android:ems="10"
-        android:hint="Re-Type Password"
-        android:inputType="textPassword"
-        android:singleLine="true"
-        android:textColor="#00ffff" />
-    
-    <EditText 
-        android:id="@+id/editText_shortselfdescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.2"
-        android:background="@drawable/backcolor"
-        android:ems="10"
-        android:hint="Short Self Description"
-        android:inputType="text"
-        android:singleLine="true"
-        android:textColor="#00ffff" />
-    
-    <EditText 
-        android:id="@+id/nameofbusiness"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.2"
-        android:background="@drawable/backcolor"
-        android:ems="10"
-        android:hint="Name Of Business"
-        android:inputType="text"
-        android:singleLine="true"
-        android:textColor="#00ffff" />
-    
-    <EditText 
-        android:id="@+id/businesstype"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.2"
-        android:background="@drawable/backcolor"
-        android:ems="10"
-        android:hint="Business Type"
-        android:inputType="text"
-        android:singleLine="true"
-        android:textColor="#00ffff" />
-    
-    <Button 
-        android:id="@+id/btn_submit_investor"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.2"
-        android:text="Submit" />
+	        <EditText
+	            android:id="@+id/editText_investor_age"
+	            android:layout_width="wrap_content"
+	            android:layout_height="match_parent"
+	            android:layout_weight="1"
+	            android:background="@drawable/backcolor"
+	            android:ems="10"
+	            android:hint="Age"
+	            android:inputType="number"
+	            android:singleLine="true" />
+	    </LinearLayout>
+	    
+	    <RadioGroup
+	        android:id="@+id/RadioGroup_investorgender"
+	        android:layout_width="match_parent"
+        	android:layout_height="wrap_content"
+       		android:layout_weight="1">
+	        <RadioButton
+	            android:id="@+id/rbtn_investor_female"
+	            android:layout_width="match_parent"
+	            android:layout_height="match_parent"
+	            android:layout_weight="1"
+	            android:text="Female" />
 
-    </LinearLayout>
+	        <RadioButton
+	            android:id="@+id/rbtn_investor_male"
+	            android:layout_width="match_parent"
+	            android:layout_height="match_parent"
+	            android:layout_weight="1"
+	            android:text="Male" />
+	    </RadioGroup>
+	        
+
+	    <EditText
+	        android:id="@+id/editText_investor_email"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:background="@drawable/backcolor"
+	        android:ems="10"
+	        android:hint="Email"
+	        android:inputType="textEmailAddress"
+	        android:singleLine="true" />
+
+	    <EditText
+	        android:id="@+id/editText_investor_password"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:background="@drawable/backcolor"
+	        android:ems="10"
+	        android:hint="Password"
+	        android:inputType="textPassword"
+	        android:singleLine="true" />
+
+	    <EditText
+	        android:id="@+id/editText_investor_re_password"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:background="@drawable/backcolor"
+	        android:ems="10"
+	        android:hint="Re-Type Password"
+	        android:inputType="textPassword"
+	        android:singleLine="true" />
+
+	    <Button
+	        android:id="@+id/btnsubmit_investor"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:text="Submit" />
+	</LinearLayout>
     
 </RelativeLayout>
