@@ -2,7 +2,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#140054" >
-    
+    android:background="#cccccc" >
 
+    <ListView
+        android:id="@+id/listideas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+        
+        
+        
+    </ListView>
+    
 </RelativeLayout>

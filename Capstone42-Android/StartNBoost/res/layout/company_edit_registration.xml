@@ -27,7 +27,6 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="Business Owner"
-            android:background="@drawable/backcolor"
             android:textAppearance="?android:attr/textAppearanceSmall"/>
 
         <EditText
@@ -35,6 +34,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+           	android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/backcolor"
             android:ems="10"
             android:hint="Business Owner Lastname"
@@ -48,6 +50,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+           	android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/backcolor"
             android:ems="10"
             android:hint="Business Owner Firstname"
@@ -58,6 +63,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+           	android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/backcolor"
             android:ems="10"
             android:hint="Middle initial" />
@@ -67,6 +75,9 @@
             android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:layout_weight="1"
+	        android:layout_marginLeft="10dp"
+           	android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
             android:text="Submit"/>
 
     </LinearLayout>

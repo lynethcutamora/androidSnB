@@ -3,6 +3,86 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#cccccc" >
-    
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/onfire_imageprofile"
+                android:layout_width="70dp"
+        		android:layout_height="70dp"
+        		android:contentDescription="@string/image"
+        		android:paddingLeft="10dp"
+        		android:paddingRight="10dp"
+                android:src="@drawable/ic_action_profile" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingRight="10dp" >
+
+                <TextView
+                    android:id="@+id/onfire_profilename"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="name"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/onfire_dataofpost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="dateofpost"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/star" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/onfire_postcomments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="dri ang akong mga post nga ibuntang.." />
+
+        <ImageView
+            android:id="@+id/onfire_imagepost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_launcher" />
+        
+        <ListView
+            android:id="@+id/listofonfirecomments"
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp" >
+            
+        </ListView>
+
+    </LinearLayout>
+    
 </RelativeLayout>

@@ -27,7 +27,10 @@
         	android:background="@drawable/backcolor"
 			android:hint="Company Name"
 			android:singleLine="true"
-			android:inputType="text" >
+			android:inputType="text"
+			android:layout_marginLeft="10dp"
+           	android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp" >
 			<requestFocus />
     	</EditText>
 
@@ -39,7 +42,10 @@
             android:ems="10"
             android:hint="Email"
             android:background="@drawable/backcolor"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:layout_marginLeft="10dp"
+           	android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp" />
 
         <EditText
             android:id="@+id/edittext_company_password"
@@ -49,7 +55,10 @@
             android:ems="10"
             android:hint="Password"
             android:background="@drawable/backcolor"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:layout_marginLeft="10dp"
+           	android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp" />
 
         <EditText
             android:id="@+id/edittext_company_retypepassword"
@@ -59,7 +68,10 @@
             android:ems="10"
             android:hint="Re-Type password"
             android:background="@drawable/backcolor"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:layout_marginLeft="10dp"
+           	android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp" />
      
         <EditText
             android:id="@+id/edittext_company_businesstype"
@@ -70,7 +82,10 @@
             android:ems="10"
             android:hint="Type of Business"
             android:inputType="text"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:layout_marginLeft="10dp"
+           	android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp" />
 
         <EditText
             android:id="@+id/edittext_company_yearfounded"
@@ -80,7 +95,10 @@
             android:ems="10"
             android:hint="Year Founded"
             android:background="@drawable/backcolor"
-            android:inputType="number" />
+            android:inputType="number"
+            android:layout_marginLeft="10dp"
+           	android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp" />
 
         <EditText
             android:id="@+id/edittext_company_description"
@@ -89,14 +107,20 @@
             android:layout_weight="1"
             android:ems="10"
             android:background="@drawable/backcolor"
-            android:hint="Short Business Description" />
+            android:hint="Short Business Description"
+            android:layout_marginLeft="10dp"
+           	android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp" />
 	
 	    <Button
 	        android:id="@+id/btn_submit_company"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:layout_weight="1"
-	        android:text="Submit" />
+	        android:text="Submit"
+	        android:layout_marginLeft="10dp"
+           	android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp" />
 
     </LinearLayout>
     

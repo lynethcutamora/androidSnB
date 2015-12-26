@@ -102,10 +102,12 @@ public class CompanyActivity extends Activity{
 		}
 		@Override
 		protected void onPostExecute(Boolean result) {
+			String email = companyemail.getText().toString();
 			if(result == true){
-				Toast.makeText(CompanyActivity.this, "Create Successfull", Toast.LENGTH_LONG).show();
-				Intent i = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(i);
+				//Toast.makeText(CompanyActivity.this, "Create Successfull", Toast.LENGTH_LONG).show();
+				Intent company = new Intent(getApplicationContext(), CompanySubActivity.class);
+				company.putExtra("comp", email);
+                startActivity(company);
 			}
 			else{
 				Toast.makeText(CompanyActivity.this, "Error", Toast.LENGTH_LONG).show();

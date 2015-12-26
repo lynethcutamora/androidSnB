@@ -9,9 +9,12 @@ public class Userdtl {
 	private String shortSelfDescription;
 	private String nameOfBusiness;
 	private String businessType;
+	private String address;
+	private String datejoined;
+	private String picname;
 	
 	public Userdtl(){}
-	public Userdtl(String lName, String fName, String midInit, String age, String gender, String shortSelfDescription, String nameOfBusiness, String businessType) {
+	public Userdtl(String lName, String fName, String midInit, String age, String gender, String shortSelfDescription, String nameOfBusiness, String businessType,String address,String datejoined,String picname) {
 		super();
 		this.lName = lName;
 		this.fName = fName;
@@ -21,6 +24,9 @@ public class Userdtl {
 		this.shortSelfDescription = shortSelfDescription;
 		this.nameOfBusiness = nameOfBusiness;
 		this.businessType = businessType;
+		this.address = address;
+		this.datejoined = datejoined;
+		this.picname = picname;
 	}
 	public String getlname() {
 		return lName;
@@ -76,5 +82,24 @@ public class Userdtl {
 	}
 	public void setbusinesstype(String businessType){
 		this.businessType = businessType;
+	}
+	public String getaddress(){
+		return address;
+	}
+	public void setaddress(String address){
+		this.address = address;
+	}
+	
+	public String getdatejoined(){
+		return datejoined;
+	}
+	public void setdatejoined(String datejoined){
+		this.datejoined = datejoined;
+	}
+	public String getpicname(){
+		return picname;
+	}
+	public void setpicname(String picname){
+		this.picname = picname;
 	}
 }

@@ -124,10 +124,11 @@ public class InvestorActivity extends Activity{
 		}
 		@Override
 		protected void onPostExecute(Boolean result) {
+			String emailadd = email.getText().toString();
 			if(result == true){
-				Toast.makeText(InvestorActivity.this, "Create Successfull", Toast.LENGTH_LONG).show();
-				Intent i = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(i);
+				Intent investor = new Intent(getApplicationContext(), InvestorSubActivity.class);
+				investor.putExtra("e", emailadd);
+                startActivity(investor);
 			}
 			else{
 				Toast.makeText(InvestorActivity.this, "Error", Toast.LENGTH_LONG).show();

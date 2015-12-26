@@ -1,27 +1,9 @@
 package com.android.startnboost;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
@@ -31,23 +13,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 public class MainActivity extends Activity {
-	
+	public static final String PREFS_NAME = "LoginPrefs";
 	private String[] mNavigationDrawerItemTitles;
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
 	private ActionBarDrawerToggle mDrawerToggle;
-
-	public Userdtl u1;
     // nav drawer title
     private CharSequence mDrawerTitle;
  
     // used to store app title
     private CharSequence mTitle;
-    
-    private String lname = "ESTOSE";
     private String id;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -133,9 +110,19 @@ public class MainActivity extends Activity {
        if (mDrawerToggle.onOptionsItemSelected(item)) {
            return true;
        }
-       
+       if (item.getItemId() == R.id.logout) {
+           Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+           startActivity(intent);
+       }
        return super.onOptionsItemSelected(item);
 	}
+	
+	@Override
+	public void onBackPressed() {
+	    Intent intent = new Intent(Intent.ACTION_MAIN);
+	    intent.addCategory(Intent.CATEGORY_HOME);
+	    startActivity(intent);
+	} 
 	
 	@Override
     protected void onPostCreate(Bundle savedInstanceState) {

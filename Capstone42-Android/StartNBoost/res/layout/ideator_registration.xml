@@ -25,11 +25,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/backcolor"
             android:ems="10"
             android:hint="Lastname"
             android:inputType="textPersonName"
-            android:singleLine="true" />
+            android:singleLine="true" >
+            <requestFocus />
+    </EditText>
 
     <EditText 
         android:id="@+id/edittext_ideator_fname"
@@ -37,12 +42,14 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:layout_weight="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/backcolor"
 		android:hint="Firstname"
 		android:singleLine="true"
-        android:inputType="textPersonName" >
-        <requestFocus />
-    </EditText>
+        android:inputType="textPersonName" />
+        
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -54,6 +61,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/backcolor"
             android:ems="10"
             android:hint="Middle Initial"
@@ -64,6 +74,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/backcolor"
             android:ems="10"
             android:hint="Age"
@@ -76,7 +89,10 @@
         android:id="@+id/RadioGroup_ideatorgender"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1" >
+        android:layout_weight="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp" >
 
         <RadioButton
             android:id="@+id/rbtn_ideator_female"
@@ -99,6 +115,9 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:layout_weight="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/backcolor"
 		android:hint="Email"
 		android:singleLine="true"
@@ -110,6 +129,9 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:layout_weight="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/backcolor"
 		android:hint="Password"
 		android:singleLine="true"
@@ -122,6 +144,9 @@
         android:layout_weight="1"
         android:background="@drawable/backcolor"
         android:ems="10"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
         android:hint="Re-Type Password"
         android:inputType="textPassword"
         android:singleLine="true"/>
@@ -131,6 +156,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
         android:text="Submit"/>
 
     </LinearLayout>

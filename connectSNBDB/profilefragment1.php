@@ -4,7 +4,7 @@ $query;
 if(isset($_GET['userId'])){
 	$userId = $_GET['userId'];
 
-	$query = "SELECT * FROM user_dtl WHERE userId = '$userId'";
+	$query = "SELECT * FROM user_md WHERE userId = '$userId'";
 
 	$result = mysql_query($query) 
 		or die('Error in query: $query' . mysql_error());
@@ -14,5 +14,5 @@ if(isset($_GET['userId'])){
 		$output[] = $row;
 	}
 	print (json_encode($output));
-}	
+}
 ?>

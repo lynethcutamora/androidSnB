@@ -25,11 +25,11 @@ import android.widget.Toast;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 
 public class IdeatorActivity extends Activity{
-	private Button btnSubmitIdeator;
-	private EditText lname,fname,mi,age,email,password,retypepassword;
-	private RadioGroup radiogroup;
-	private RadioButton ideator_female,ideator_male;
-	private String ideator_gender;
+	Button btnSubmitIdeator;
+	EditText lname,fname,mi,age,email,password,retypepassword;
+	RadioGroup radiogroup;
+	RadioButton ideator_female,ideator_male;
+	String ideator_gender;
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -123,9 +123,10 @@ public class IdeatorActivity extends Activity{
 		}
 		@Override
 		protected void onPostExecute(Boolean result) {
+			String emailadd = email.getText().toString();
 			if(result == true){
-				Toast.makeText(IdeatorActivity.this, "Create Successfull", Toast.LENGTH_LONG).show();
-				Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+				Intent i = new Intent(getApplicationContext(), IdeatorSubActivity.class);
+				i.putExtra("email", emailadd);
                 startActivity(i);
 			}
 			else{

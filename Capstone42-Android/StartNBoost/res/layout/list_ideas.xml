@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#cccccc" >
+    
+	<ImageView
+        android:id="@+id/listideas_profileimage"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:contentDescription="@string/image"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
+ 
+    <TextView
+        android:id="@+id/listideas_profilename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/listideas_profileimage"
+        android:textSize="16dp" />
+    
+    <TextView
+        android:id="@+id/listideas_postdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
+        android:layout_below="@+id/listideas_profilename"
+       	android:layout_toRightOf="@+id/listideas_profileimage"
+       	android:textSize="14dp" />
+ 
+    <TextView
+        android:id="@+id/listideas_postdescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/listideas_postdate"
+        android:layout_toRightOf="@+id/listideas_profileimage"
+        android:paddingLeft="10dp"
+        android:textColor="#3399FF"
+        android:textSize="14dp" />
+    <ImageView 
+        android:id="@+id/listideas_userpost"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:contentDescription="@string/image"
+        android:layout_below="@+id/listideas_postdescription"
+        android:layout_toRightOf="@+id/listideas_profileimage"
+        android:paddingLeft="10dp"/>
+    <TextView 
+        android:id="@+id/listideas_postcomments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/listideas_userpost"
+        android:text="1 like, 1 comments"/>
+    
+    
+</RelativeLayout>

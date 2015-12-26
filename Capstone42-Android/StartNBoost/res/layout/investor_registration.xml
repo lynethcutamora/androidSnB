@@ -3,16 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#cccccc" >
-
-	<LinearLayout
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content" >
-
-	</LinearLayout>
-
+    
 	<LinearLayout
 	    android:layout_width="match_parent"
-	    android:layout_height="460dp"
+	    android:layout_height="match_parent"
 	    android:orientation="vertical" >
 
 	    <TextView
@@ -33,7 +27,10 @@
 	        android:ems="10"
 	        android:hint="Lastname"
 	        android:inputType="textPersonName"
-	        android:singleLine="true" >
+	        android:singleLine="true"
+	        android:layout_marginLeft="10dp"
+           	android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp" >
 	        	<requestFocus />
 	        </EditText>
 
@@ -46,7 +43,10 @@
 	        android:ems="10"
 	        android:hint="Firstname"
 	        android:inputType="textPersonName"
-	        android:singleLine="true" />
+	        android:singleLine="true"
+	        android:layout_marginLeft="10dp"
+           	android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp" />
 
 	    <LinearLayout
 	        android:layout_width="match_parent"
@@ -61,7 +61,10 @@
 	            android:background="@drawable/backcolor"
 	            android:ems="10"
 	            android:hint="Middle Initial"
-	            android:singleLine="true" />
+	            android:singleLine="true"
+	            android:layout_marginLeft="10dp"
+           		android:layout_marginRight="10dp"
+            	android:layout_marginBottom="5dp" />
 
 	        <EditText
 	            android:id="@+id/editText_investor_age"
@@ -72,14 +75,20 @@
 	            android:ems="10"
 	            android:hint="Age"
 	            android:inputType="number"
-	            android:singleLine="true" />
+	            android:singleLine="true"
+	            android:layout_marginLeft="10dp"
+           		android:layout_marginRight="10dp"
+            	android:layout_marginBottom="5dp" />
 	    </LinearLayout>
 	    
 	    <RadioGroup
 	        android:id="@+id/RadioGroup_investorgender"
 	        android:layout_width="match_parent"
         	android:layout_height="wrap_content"
-       		android:layout_weight="1">
+       		android:layout_weight="1"
+       		android:layout_marginLeft="10dp"
+           	android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp">
 	        <RadioButton
 	            android:id="@+id/rbtn_investor_female"
 	            android:layout_width="match_parent"
@@ -105,7 +114,10 @@
 	        android:ems="10"
 	        android:hint="Email"
 	        android:inputType="textEmailAddress"
-	        android:singleLine="true" />
+	        android:singleLine="true"
+	        android:layout_marginLeft="10dp"
+           	android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp" />
 
 	    <EditText
 	        android:id="@+id/editText_investor_password"
@@ -116,7 +128,10 @@
 	        android:ems="10"
 	        android:hint="Password"
 	        android:inputType="textPassword"
-	        android:singleLine="true" />
+	        android:singleLine="true"
+	        android:layout_marginLeft="10dp"
+           	android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp" />
 
 	    <EditText
 	        android:id="@+id/editText_investor_re_password"
@@ -127,14 +142,20 @@
 	        android:ems="10"
 	        android:hint="Re-Type Password"
 	        android:inputType="textPassword"
-	        android:singleLine="true" />
+	        android:singleLine="true"
+	        android:layout_marginLeft="10dp"
+           	android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp" />
 
 	    <Button
 	        android:id="@+id/btnsubmit_investor"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:layout_weight="1"
-	        android:text="Submit" />
+	        android:text="Submit"
+	        android:layout_marginLeft="10dp"
+           	android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp" />
 	</LinearLayout>
     
 </RelativeLayout>

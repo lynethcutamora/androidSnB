@@ -21,31 +21,46 @@ import org.json.JSONObject;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 public class LoginActivity extends Activity{
-	
+	public static final String PREFS_NAME = "LoginPrefs";
 	Button btn_SignUp,btn_Login;
 	EditText txt_email,txt_pass;
-	
+	SharedPreferences settings;
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login_activity);
+		
+		    settings = getSharedPreferences("mySharedPref", 0);
+		    if (settings.getBoolean("connected", false)) {
+		        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+		    }
 		btn_SignUp = (Button) findViewById(R.id.btnSignup);
 		btn_Login = (Button) findViewById(R.id.btnLogin);
 		txt_email = (EditText) findViewById(R.id.editText_fname);
 		txt_pass = (EditText) findViewById(R.id.editText_lastname);
 		
+		
+		
+		
 		login();
 		signup();
 	}
+	
+	public void doLogin() {
+	    /* ... check credentials and another stuff ... */
+	    SharedPreferences.Editor editor = settings.edit();
+	    editor.putString("connected", "true");
+	    editor.commit();
+	 }
 	
 	public void login(){
 		btn_Login.setOnClickListener(new View.OnClickListener() {
@@ -171,10 +186,16 @@ public class LoginActivity extends Activity{
 				String userId = i1.getuserid();
 				if(txt_email.getText().toString().equals(email)){
 					if(pas.equals(password)){
+						//-------Login------
 						Intent intent = new Intent(getApplicationContext(), MainActivity.class);
 						intent.putExtra("userId", userId);
+						SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+                        SharedPreferences.Editor editor = settings.edit();
+                        editor.putString("logged", "logged");
+                        editor.commit();
+						intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 						startActivity(intent);
-						//startActivity(i);
+						
 						
 					Toast.makeText(getApplicationContext(), "Welcome Sensie!!! =)",
 	             		   Toast.LENGTH_LONG).show();
@@ -208,12 +229,5 @@ public class LoginActivity extends Activity{
                 		   Toast.LENGTH_LONG).show();
             }
         });
-	}
-	
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
 	}
 }
