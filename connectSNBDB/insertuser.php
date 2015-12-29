@@ -2,7 +2,7 @@
 	include_once("conn.php");
 	
 	if(isset($_POST['btnideator'])){
-		$userId = uniqid('id');
+		$userId = uniqid();
 		$fname = $_POST['fname'];
 		$lname = $_POST['lname'];
 		$mi = $_POST['mi'];
@@ -11,7 +11,7 @@
 		$email = $_POST['email'];
 		$password = md5($_POST['password']);
 		$picid=uniqid('pi');
-		$locationid = uniqid('lid');
+		$locationid = uniqid('li');
 
 		mysql_query("INSERT INTO user_md(userId,user_Type,user_dateRegistered,user_emailAdd,user_password,user_profilePicId) VALUES ('$userId','Ideator',NOW(),'$email','$password','$picid')");
 		mysql_query("INSERT INTO user_dtl(userId,user_lName,user_fName,user_midInit,user_age,user_gender) VALUES ('$userId','$lname','$fname','$mi','$age','$gender')");
@@ -20,7 +20,7 @@
 
 	}else if(isset($_POST['btninvestor'])){
 
-		$userId = uniqid('id');
+		$userId = uniqid();
 		$fname = $_POST['fname'];
 		$lname = $_POST['lname'];
 		$mi = $_POST['mi'];
@@ -29,7 +29,7 @@
 		$email = $_POST['email'];
 		$password = md5($_POST['password']);
 		$picid=uniqid('pi');
-		$locationid = uniqid('lid');
+		$locationid = uniqid('li');
 
 		mysql_query("INSERT INTO user_md(userId,user_Type,user_dateRegistered,user_emailAdd,user_password,user_profilePicId) VALUES ('$userId','Investor',NOW(),'$email','$password','$picid')");
 		mysql_query("INSERT INTO user_dtl(userId,user_lName,user_fName,user_midInit,user_age,user_gender) VALUES ('$userId','$lname','$fname','$mi','$age','$gender')");
@@ -37,7 +37,7 @@
 		echo "Data Inserted";
 	}else if(isset($_POST['btncompany'])){
 
-		$userId = uniqid('id');
+		$userId = uniqid();
 		$companyname = $_POST['companyname'];
 		$email = $_POST['email'];
 		$password = md5($_POST['password']);

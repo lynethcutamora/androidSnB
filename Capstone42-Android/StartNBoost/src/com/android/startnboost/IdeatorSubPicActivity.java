@@ -1,7 +1,11 @@
 package com.android.startnboost;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -11,10 +15,14 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -26,7 +34,6 @@ import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -37,7 +44,7 @@ public class IdeatorSubPicActivity extends Activity {
     ProgressDialog prgDialog;
     String encodedString;
     RequestParams params = new RequestParams();
-    String imgPath, fileName, emailpicid, picname;
+    String imgPath, fileName, emailpicid, picname, avatarid;
     Bitmap bitmap;
     Button btnpicideator;
     private static int RESULT_LOAD_IMG = 1;
@@ -48,14 +55,15 @@ public class IdeatorSubPicActivity extends Activity {
         setContentView(R.layout.ideator_pic_register);
         Bundle extras = getIntent().getExtras();
         emailpicid = extras.getString("email_picid");
+        avatarid = extras.getString("avatar_id");
+        
         prgDialog = new ProgressDialog(this);
         // Set Cancelable as False
         prgDialog.setCancelable(false);
         btnpicideator = (Button) findViewById(R.id.btn_submitall_ideatorregistration);
+        
     }
     
-    
- 
     public void loadImagefromGallery(View view) {
         // Create intent to Open Image applications like Gallery, Google Photos
         Intent galleryIntent = new Intent(Intent.ACTION_PICK,
@@ -118,7 +126,7 @@ public class IdeatorSubPicActivity extends Activity {
             encodeImagetoString();
             Toast.makeText(IdeatorSubPicActivity.this, "Welcome New Commers....", Toast.LENGTH_LONG).show();
             Insertimagename task1 = new Insertimagename();
-    		task1.execute(new String[]{"http://192.168.1.107/androidSnB/connectSNBDB/insertuserpic.php"});
+    		task1.execute(new String[]{"http://192.168.43.228/androidSnB/connectSNBDB/insertuserpic.php"});
             Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
             startActivity(intent);
             
@@ -175,7 +183,7 @@ public class IdeatorSubPicActivity extends Activity {
         prgDialog.setMessage("Invoking Php");       
         AsyncHttpClient client = new AsyncHttpClient();
         // Don't forget to change the IP address to your LAN address. Port no as well.
-        client.post("http://192.168.1.107/androidSnB/connectSNBDB/imgupload/upload_image.php",
+        client.post("http://192.168.43.228/androidSnB/connectSNBDB/imgupload/upload_image.php",
                 params, new AsyncHttpResponseHandler() {
                     // When the response returned by REST has Http
                     // response code '200'
@@ -230,14 +238,16 @@ public class IdeatorSubPicActivity extends Activity {
     }
     
     private class Insertimagename extends AsyncTask<String, Void, Boolean>{
+
 		@Override
 		protected Boolean doInBackground(String... urls) {
 			for(String url1 : urls){
 				try {
 					ArrayList<NameValuePair> pairs = new ArrayList<NameValuePair>();
-					pairs.add(new BasicNameValuePair("btnpicideator", btnpicideator.getText().toString()));
+					pairs.add(new BasicNameValuePair("btnpic", btnpicideator.getText().toString()));
 					pairs.add(new BasicNameValuePair("id", emailpicid));
 					pairs.add(new BasicNameValuePair("fileName", picname.trim()));
+					pairs.add(new BasicNameValuePair("avatarid", avatarid));
 					HttpClient client = new DefaultHttpClient();
 					HttpPost post = new HttpPost(url1);
 					post.setEntity(new UrlEncodedFormEntity(pairs));
@@ -261,4 +271,7 @@ public class IdeatorSubPicActivity extends Activity {
 			}
 		}
 	}
+    
+    
+    
 }

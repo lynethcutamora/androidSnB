@@ -33,6 +33,7 @@ public class MainActivity extends Activity {
 		
 		Bundle extras = getIntent().getExtras();
 		id = extras.getString("userId");
+		
 		// for proper titles
 				mTitle = mDrawerTitle = getTitle();
 				

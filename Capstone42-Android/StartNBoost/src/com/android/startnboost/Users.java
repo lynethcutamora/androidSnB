@@ -6,15 +6,17 @@ public class Users {
 	private String dateRegistered;
 	private String emailAdd;
 	private String password;
+	private String picid;
 	
 	public Users(){}
-	public Users(String userId, String userType, String dateRegistered, String emailAdd, String password) {
+	public Users(String userId, String userType, String dateRegistered, String emailAdd, String password, String picid) {
 		super();
 		this.userId = userId;
 		this.userType = userType;
 		this.dateRegistered = dateRegistered;
 		this.emailAdd = emailAdd;
 		this.password = password;
+		this.picid = picid;
 	}
 	public String getuserid() {
 		return userId;
@@ -45,5 +47,11 @@ public class Users {
 	}
 	public void setpassword(String password){
 		this.password = password;
+	}
+	public String getpicid(){
+		return picid;
+	}
+	public void setpicid(String picid){
+		this.picid = picid;
 	}
 }

@@ -2,160 +2,151 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#97a18d">
-
-    <ImageView
-        android:id="@+id/header_imageview"
+    android:background="#97a18d" >
+    
+    <ImageView 
+        android:id="@+id/header_imageview_company"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:src="@drawable/bg" />
-
-    <LinearLayout
-        android:id="@+id/informations_container"
+    
+    <LinearLayout 
+        android:id="@+id/informations_container_company"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@+id/header_imageview"
+        android:layout_below="@+id/header_imageview_company"
         android:gravity="center"
         android:paddingTop="32dp"
         android:paddingBottom="32dp"
-        android:background="#97a18d">
-
-        <TextView
-            android:id="@+id/user_lName"
+        android:background="#97a18d" >
+        
+        <TextView 
+            android:id="@+id/user_lName_company"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Lastname"
             android:textSize="17dp"
             android:textStyle="bold" />
-
-        <LinearLayout
+        
+        <LinearLayout 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center" >
             
-            <TextView
-            android:id="@+id/user_fName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Firstname"
-            android:textSize="17dp"
-            android:textStyle="bold" />
+            <TextView 
+                android:id="@+id/user_fName_company"
+                android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:text="Firstname"
+            	android:textSize="17dp"
+            	android:textStyle="bold" />
+            <TextView 
+                android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:text=","
+            	android:textSize="17dp"
+            	android:textStyle="bold" />
+            <TextView 
+                android:id="@+id/user_midInit_company"
+                android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:text="M.I"
+            	android:textSize="17dp"
+            	android:textStyle="bold" />
             
-            <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=","
-            android:textSize="17dp"
-            android:textStyle="bold" />
-            
-            <TextView
-            android:id="@+id/user_midInit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="M.I"
-            android:textSize="17dp"
-            android:textStyle="bold" />
         </LinearLayout>
-
-        <LinearLayout
+        
+        <LinearLayout 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp" >
-
+            
             <ImageView
-                android:id="@+id/imageView1"
+                android:id="@+id/imageviewgoldcompany"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_weight="1"
                 android:src="@drawable/starbadge" />
-
-            <ImageView
-                android:id="@+id/imageView2"
+            <ImageView 
+                android:id="@+id/imageviewsilvercompany"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_weight="1"
                 android:src="@drawable/starbadgesilver" />
-
-            <ImageView
-                android:id="@+id/imageView3"
+            <ImageView 
+                android:id="@+id/imageviewbronzecompany"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_weight="1"
                 android:src="@drawable/starbadgebronze" />
-
-            <ImageView
-                android:id="@+id/imageView4"
+            <ImageView 
+                android:id="@+id/imageviewblackcompany"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_weight="1"
                 android:src="@drawable/starbadgeblack" />
-
+            
         </LinearLayout>
-
-        <LinearLayout
+        
+        <LinearLayout 
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
-
-            <TextView
-                android:id="@+id/profile_goldbadge"
+            
+            <TextView 
+                android:id="@+id/badge_goldcompany"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="0"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
-
-            <TextView
-                android:id="@+id/profile_silverbadge"
+            <TextView 
+                android:id="@+id/badge_silvercompany"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="0"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
-
-            <TextView
-                android:id="@+id/profile_bronzebadge"
+            <TextView 
+                android:id="@+id/badge_bronzecompany"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="0"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
-
             <TextView
-                android:id="@+id/profile_blackbadge"
+                android:id="@+id/badge_blackcompany"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="0"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
-
+            
         </LinearLayout>
-
-        <TextView
+        
+        <TextView 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:textColor="#FF909090" />
-
+        
     </LinearLayout>
-
-  <!-- cheat code: negative margin -->
-
+    
     <ImageView
-        android:id="@+id/user_profilepic"
+        android:id="@+id/company_profilepic"
         android:layout_width="145dp"
         android:layout_height="145dp"
         android:layout_above="@+id/informations_container"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="-16dp"
         android:src="@drawable/user_profile_pic" />
-
+    
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -164,24 +155,22 @@
         android:layout_marginBottom="55dp"
         android:orientation="vertical"
         android:background="#cccccc" >
-
+        
         <TextView
-            android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="About:"
             android:layout_marginLeft="10dp"
             android:textAppearance="?android:attr/textAppearanceLarge" />
-
+        
         <TextView
-            android:id="@+id/selfDescription"
+            android:id="@+id/company_selfdescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="Self Description" />
-
+        
         <TextView
-            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" " />
@@ -189,58 +178,24 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
-
+            
             <TextView
-                android:id="@+id/idpic_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="Place: " />
-
-            <TextView
-                android:id="@+id/userAddress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="address"
-                android:textColor="#FF707070" />
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/userGender"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Gender"
-            android:textColor="#FF707070" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <TextView
-                android:id="@+id/idpic_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="Joined: " />
-
+            
             <TextView
-                android:id="@+id/userDatejoined"
+                android:id="@+id/company_datejoined"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="date joined"
                 android:textColor="#FF707070" />
+            
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/textviewtype"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="account_type" />
-
+        
     </LinearLayout>
+    
 
 </RelativeLayout>

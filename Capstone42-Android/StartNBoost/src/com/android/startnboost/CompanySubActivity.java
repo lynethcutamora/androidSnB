@@ -30,7 +30,7 @@ import android.widget.Toast;
 
 public class CompanySubActivity extends Activity{
 	
-	private String id,emailadd;
+	private String id,emailadd,avatarid;
 	private EditText lname,fname,mi;
 	private Button submitfullcompany;
 
@@ -48,7 +48,7 @@ public class CompanySubActivity extends Activity{
 		
 		
 		ReadData task1 = new ReadData();
-		task1.execute(new String[]{"http://192.168.1.107/androidSnB/connectSNBDB/viewById.php?emailAdd=" +emailadd.toString()});
+		task1.execute(new String[]{"http://192.168.43.228/androidSnB/connectSNBDB/viewById.php?emailAdd=" +emailadd.toString()});
 		
 		submitallcompany();
 	}
@@ -117,6 +117,7 @@ public class CompanySubActivity extends Activity{
 						i1.setdateregistered(jsonData.getString("user_dateRegistered"));
 						i1.setemailadd(jsonData.getString("user_emailAdd"));
 						i1.setpassword(jsonData.getString("user_password"));
+						i1.setpicid(jsonData.getString("user_profilePicId"));
 					}
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
@@ -130,6 +131,7 @@ public class CompanySubActivity extends Activity{
 		protected void onPostExecute(Boolean result) {
 			if(result == true){
 				id = i1.getuserid();
+				avatarid = i1.getpicid();
 			}
 			else{
 				Toast.makeText(CompanySubActivity.this, "Error", Toast.LENGTH_LONG).show();
@@ -151,7 +153,7 @@ public class CompanySubActivity extends Activity{
                 	mi.setError("Empty Line!!");
                 }else{
                 	Editcompany task = new Editcompany();
-					task.execute(new String[]{"http://192.168.1.107/androidSnB/connectSNBDB/updateuser.php"});
+					task.execute(new String[]{"http://192.168.43.228/androidSnB/connectSNBDB/updateuser.php"});
                 }
             }
         });
@@ -191,8 +193,9 @@ public class CompanySubActivity extends Activity{
 		@Override
 		protected void onPostExecute(Boolean result) {
 			if(result == true){
-				Toast.makeText(CompanySubActivity.this, "Welcome New Commers..", Toast.LENGTH_LONG).show();
-				Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+				Intent intent = new Intent(getApplicationContext(), IdeatorSubPicActivity.class);
+				intent.putExtra("email_picid", id);
+				intent.putExtra("avatar_id", avatarid);
                 startActivity(intent);
 			}
 			else{

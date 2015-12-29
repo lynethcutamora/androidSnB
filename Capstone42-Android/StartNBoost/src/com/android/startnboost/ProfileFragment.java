@@ -28,27 +28,29 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 @SuppressLint("ValidFragment")
 public class ProfileFragment extends Fragment {
-	
 	@SuppressLint("ValidFragment")
 	private String user_dtl,picname;
+	
     public ProfileFragment(String user) {
     	user_dtl =  user;
-    }    
+    }
+    
     private TextView userlname,url;
     private TextView userfname;
-    private TextView usermi,selfdescription,place,gender,joined;
+    private TextView usermi,selfdescription,place,gender,joined,type;
     private ImageView image;
+    
     @Override
     public View onCreateView(LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState){
         // -- inflate the layout for this fragment
     	View rootView = inflater.inflate(R.layout.fragment_profile, container, false);
     	readData3(user_dtl);
+    	readData1(user_dtl);
+    	
         // Set the Text to try this out
-    	url = (TextView) rootView.findViewById(R.id.url);
     	userlname = (TextView) rootView.findViewById(R.id.user_lName);
     	userfname = (TextView) rootView.findViewById(R.id.user_fName);
     	usermi = (TextView) rootView.findViewById(R.id.user_midInit);
@@ -56,17 +58,26 @@ public class ProfileFragment extends Fragment {
     	place = (TextView) rootView.findViewById(R.id.userAddress);
     	gender = (TextView) rootView.findViewById(R.id.userGender);
     	joined = (TextView) rootView.findViewById(R.id.userDatejoined);
+    	type = (TextView) rootView.findViewById(R.id.textviewtype);
     	image = (ImageView) rootView.findViewById(R.id.user_profilepic);
     	
+    	/*if(type.getText().toString() == "Company"){
+    		ReadData4 task4 = new ReadData4();
+        	task4.execute(new String[]{"http://192.168.1.107/androidSnB/connectSNBDB/profilefragment4.php?userId=" + user_dtl});
+    	}else{
+    		ReadData task = new ReadData();
+    		task.execute(new String[]{"http://192.168.1.107/androidSnB/connectSNBDB/profilefragment.php?userId=" + user_dtl});
+    		
+    		ReadData2 task2 = new ReadData2();
+    		task2.execute(new String[]{"http://192.168.1.107/androidSnB/connectSNBDB/profilefragment2.php?userId=" + user_dtl});
+    	
+    	}*/
+    		
+  
     	readData(user_dtl);
-    	readData1(user_dtl);
-    	readData2(user_dtl);
+        readData2(user_dtl);
     	
-    	
-    	
-    	//url.setText(image_url);
 		return rootView;
-		
     }
     private Context getApplicationContext() {
 		// TODO Auto-generated method stub
@@ -74,20 +85,25 @@ public class ProfileFragment extends Fragment {
 	}
 	private void readData(String userid){
 		ReadData task1 = new ReadData();
-		task1.execute(new String[]{"http://192.168.1.107/androidSnB/connectSNBDB/profilefragment.php?userId=" + userid});
+		task1.execute(new String[]{"http://192.168.43.228/androidSnB/connectSNBDB/profilefragment.php?userId=" + userid});
 	}
     private void readData1(String userid){
 		ReadData1 task1 = new ReadData1();
-		task1.execute(new String[]{"http://192.168.1.107/androidSnB/connectSNBDB/profilefragment1.php?userId=" + userid});
+		task1.execute(new String[]{"http://192.168.43.228/androidSnB/connectSNBDB/profilefragment1.php?userId=" + userid});
 	}
     private void readData2(String userid){
 		ReadData2 task1 = new ReadData2();
-		task1.execute(new String[]{"http://192.168.1.107/androidSnB/connectSNBDB/profilefragment2.php?userId=" + userid});
+		task1.execute(new String[]{"http://192.168.43.228/androidSnB/connectSNBDB/profilefragment2.php?userId=" + userid});
 	}
     private void readData3(String userid){
 		ReadData3 task1 = new ReadData3();
-		task1.execute(new String[]{"http://192.168.1.107/androidSnB/connectSNBDB/profilefragment3.php?userId=" + userid});
+		task1.execute(new String[]{"http://192.168.43.228/androidSnB/connectSNBDB/profilefragment3.php?userId=" + userid});
 	}
+    private void readData4(String userid){
+    	ReadData4 task1 = new ReadData4();
+    	task1.execute(new String[]{"http://192.168.43.228/androidSnB/connectSNBDB/profilefragment4.php?userId=" + userid});
+    }
+  
     private class ReadData extends AsyncTask<String, Void, Boolean>{
     	String text = "";
 		
@@ -169,9 +185,6 @@ public class ProfileFragment extends Fragment {
 				place.setText(u1.getaddress());
 				joined.setText(u1.getdatejoined());
 			}
-			else{
-				//Toast.makeText(ProfileFragment.this, "Error", Toast.LENGTH_LONG).show();
-			}
 		}
 	}
     
@@ -179,7 +192,7 @@ public class ProfileFragment extends Fragment {
     	String text = "";
 		
 		ArrayList<String> list1;
-		Userdtl u1;
+		Users u1;
 		@Override
 		protected Boolean doInBackground(String... urls) {
 			InputStream is1;				
@@ -222,12 +235,14 @@ public class ProfileFragment extends Fragment {
 					JSONArray jArray = new JSONArray(text);
 					for(int i=0;i<jArray.length();i++){
 						JSONObject jsonData = jArray.getJSONObject(i);						
-						u1 = new Userdtl();
-						u1.setdatejoined(jsonData.getString("user_dateRegistered"));
+						u1 = new Users();
+						u1.setdateregistered(jsonData.getString("user_dateRegistered"));
+						u1.setusertype(jsonData.getString("user_Type"));
 					}
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
+					
 				}
 				//end of Convert from Text to JSON and add to ArrayList list1
 			}
@@ -237,10 +252,10 @@ public class ProfileFragment extends Fragment {
 		@Override
 		protected void onPostExecute(Boolean result) {
 			if(result == true){
-				joined.setText(u1.getdatejoined());
+				joined.setText(u1.getdateregistered());
+				type.setText(u1.getusertype());
 			}
 			else{
-				//Toast.makeText(ProfileFragment.this, "Error", Toast.LENGTH_LONG).show();
 			}
 		}
 	}
@@ -380,7 +395,7 @@ public class ProfileFragment extends Fragment {
 				picname = pname;
 				try{
 					int loader = R.drawable.user_profile_pic;
-			    	String image_url = "http://192.168.1.107/androidSnB/connectSNBDB/imgupload/uploadedimages/"+picname+"";
+			    	String image_url = "http://192.168.43.228/androidSnB/connectSNBDB/imgupload/uploadedimages/"+picname+"";
 			    	ImageLoader imgLoader = new ImageLoader(getApplicationContext());
 			    	imgLoader.DisplayImage(image_url, loader, image);
 			    	url.setText(image_url);
@@ -394,4 +409,82 @@ public class ProfileFragment extends Fragment {
 		}
 	}
     
+    private class ReadData4 extends AsyncTask<String, Void, Boolean>{
+    	String text = "";
+		
+		ArrayList<String> list1;
+		Companydtl c1;
+		@Override
+		protected Boolean doInBackground(String... urls) {
+			InputStream is1;				
+			for(String url1 : urls){
+				//Read from web to InputStream
+				try {					
+					HttpClient client = new DefaultHttpClient();
+					HttpPost post = new HttpPost(url1);					
+					HttpResponse response = client.execute(post);
+					is1 = response.getEntity().getContent();
+					
+				} catch (ClientProtocolException e) {
+					return false;
+				} catch (IOException e) {
+					return false;
+				}
+				//end of Read from web to InputStream
+				
+				//Convert from InputStream to String Text
+				BufferedReader reader;				
+				try {
+					reader = new BufferedReader(new InputStreamReader(is1,"iso-8859-1"), 8);
+					String line = null;
+					while ((line = reader.readLine()) != null) {
+						text += line + "\n";
+					}
+					is1.close();
+				} catch (UnsupportedEncodingException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				//end of Convert from InputStream to String Text
+				
+				//Convert from Text to JSON and add to ArrayList list1
+				list1 = new ArrayList<String>();
+				try {
+					JSONArray jArray = new JSONArray(text);
+					for(int i=0;i<jArray.length();i++){
+						JSONObject jsonData = jArray.getJSONObject(i);						
+						c1 = new Companydtl();
+						c1.setc_lname(jsonData.getString("company_lName"));
+						c1.setc_fname(jsonData.getString("company_fName"));
+						c1.setc_mi(jsonData.getString("company_midInit"));
+						c1.setc_about(jsonData.getString("company_about"));
+					}
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				//end of Convert from Text to JSON and add to ArrayList list1
+			}
+			return true;
+			
+		}
+		@Override
+		protected void onPostExecute(Boolean result) {
+			if(result == true){
+				userlname.setText(c1.getc_lname());
+				userfname.setText(c1.getc_fname());
+				usermi.setText(c1.getc_mi());
+				selfdescription.setText(c1.getc_about());
+				gender.setText("Not Available");
+				place.setText("Not Available");
+				joined.setText("Not Available");
+			}
+			else{
+				//Toast.makeText(ProfileFragment.this, "Error", Toast.LENGTH_LONG).show();
+			}
+		}
+	}
 }

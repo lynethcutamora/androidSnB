@@ -83,7 +83,7 @@ public class InvestorActivity extends Activity{
                 	Toast.makeText(getApplicationContext(), "Password did not match!!! =)", Toast.LENGTH_LONG).show();
                 }else{
                 	Insertinvestor task1 = new Insertinvestor();
-					task1.execute(new String[]{"http://192.168.1.107/androidSnB/connectSNBDB/insertuser.php"});
+					task1.execute(new String[]{"http://192.168.43.228/androidSnB/connectSNBDB/insertuser.php"});
                 }
             }
         });

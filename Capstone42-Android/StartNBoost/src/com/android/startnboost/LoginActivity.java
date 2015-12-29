@@ -74,7 +74,7 @@ public class LoginActivity extends Activity{
                 	txt_pass.setError("Empty Line!!");
                 }else{
                 	ReadData task1 = new ReadData();
-					task1.execute(new String[]{"http://192.168.1.107/androidSnB/connectSNBDB/viewById.php?emailAdd=" +txt_email.getText().toString()});
+					task1.execute(new String[]{"http://192.168.43.228/androidSnB/connectSNBDB/viewById.php?emailAdd=" +txt_email.getText().toString()});
                 }
             }
         });

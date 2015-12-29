@@ -30,7 +30,7 @@ import android.widget.Toast;
 
 public class IdeatorSubActivity extends Activity{
 	
-	private String emailadd,id;
+	private String emailadd,id,avatarid;
 	private EditText address1,address2,city,state,zipcode,country,selfdescription;
 	private Button submitfullideator;
 
@@ -53,7 +53,7 @@ public class IdeatorSubActivity extends Activity{
 		
 		
 		ReadData task1 = new ReadData();
-		task1.execute(new String[]{"http://192.168.1.107/androidSnB/connectSNBDB/viewById.php?emailAdd=" +emailadd.toString()});
+		task1.execute(new String[]{"http://192.168.43.228/androidSnB/connectSNBDB/viewById.php?emailAdd=" +emailadd.toString()});
 		
 		submitallideator();
 	}
@@ -122,6 +122,7 @@ public class IdeatorSubActivity extends Activity{
 						i1.setdateregistered(jsonData.getString("user_dateRegistered"));
 						i1.setemailadd(jsonData.getString("user_emailAdd"));
 						i1.setpassword(jsonData.getString("user_password"));
+						i1.setpicid(jsonData.getString("user_profilePicId"));
 					}
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
@@ -135,6 +136,7 @@ public class IdeatorSubActivity extends Activity{
 		protected void onPostExecute(Boolean result) {
 			if(result == true){
 				id = i1.getuserid();
+				avatarid = i1.getpicid();
 			}
 			else{
 				Toast.makeText(IdeatorSubActivity.this, "Error", Toast.LENGTH_LONG).show();
@@ -164,7 +166,7 @@ public class IdeatorSubActivity extends Activity{
                 	selfdescription.setError("Empty Line!!");
                 }else{
                 	Editideator task = new Editideator();
-					task.execute(new String[]{"http://192.168.1.107/androidSnB/connectSNBDB/updateuser.php"});
+					task.execute(new String[]{"http://192.168.43.228/androidSnB/connectSNBDB/updateuser.php"});
                 }
             }
         });
@@ -211,6 +213,7 @@ public class IdeatorSubActivity extends Activity{
 				//Toast.makeText(IdeatorSubActivity.this, "Welcome New Commers....", Toast.LENGTH_LONG).show();
 				Intent intent = new Intent(getApplicationContext(), IdeatorSubPicActivity.class);
 				intent.putExtra("email_picid", id);
+				intent.putExtra("avatar_id", avatarid);
                 startActivity(intent);
 			}
 			else{
